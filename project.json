@@ -1,10 +1,10 @@
 {
-  "name": "OrganizingProyect",
+  "name": "Academia",
   "description": "Proceso en blanco",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.10.2-preview]",
+    "UiPath.GSuite.Activities": "[1.11.0]",
     "UiPath.Mail.Activities": "[1.10.2-preview]",
     "UiPath.System.Activities": "[21.2.1-preview]",
     "UiPath.UIAutomation.Activities": "[21.2.0-preview]"
@@ -38,13 +38,13 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "8a10f8c1-899d-439c-b299-47f4bc3d6c95",
+      "uniqueId": "58ef4526-318d-4f5e-810b-4acb746c6fbb",
       "input": [],
       "output": []
     }
