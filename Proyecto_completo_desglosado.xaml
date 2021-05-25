@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Proyecto_completo_desglosado" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1248,929" sap2010:WorkflowViewState.IdRef="Proyecto_completo_desglosado_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="26">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Proyecto_completo_desglosado" sap:VirtualizedContainerService.HintSize="1258,864" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="temporal_main" />
+      <Variable x:TypeArguments="x:String" Name="excelEntrada_main" />
+      <Variable x:TypeArguments="x:String" Name="textoTemporal" />
+      <Variable x:TypeArguments="x:String" Name="directorioEntrada_main" />
+      <Variable x:TypeArguments="sd:DataTable" Name="nueva_main" />
+      <Variable x:TypeArguments="x:String" Name="textoNueva" />
+      <Variable x:TypeArguments="x:Int32" Name="referencia_main" />
+      <Variable x:TypeArguments="x:Int32" Name="lineasTXT_main" />
+      <Variable x:TypeArguments="x:String" Name="directorioPDF_main" />
+      <Variable x:TypeArguments="x:String" Name="nombre_main" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="1216,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Lectura_OCR.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="referencias">[referencia_main]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="lineasTXT">[lineasTXT_main]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="directorioPDF">[directorioPDF_main]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="nombre">[nombre_main]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[lineasTXT_main&gt;0.85*34*referencia_main]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1216,270" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="335,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Volcado_automatico_a_Datos_Entrada.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <OutArgument x:TypeArguments="x:String" x:Key="directorioEntrada">[directorioEntrada_main]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="excelEntrada">[excelEntrada_main]</OutArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="referencias">[referencia_main]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="directorioPDF">[directorioPDF_main]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="nombre">[nombre_main]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="lineasTXT">[lineasTXT_main]</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Then>
+      <If.Else>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Volcado_manual_a_Datos_Entrada.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="directorioPDF">[directorioPDF_main]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="nombre">[nombre_main]</InArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="excelEntrada">[excelEntrada_main]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="directorioEntrada">[directorioEntrada_main]</OutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="1216,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Recopilación datos entrada.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva">[nueva_main]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="temporal">[temporal_main]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="directorioEntrada_inv">[directorioEntrada_main]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="excelEntrada_inv">[excelEntrada_main]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Parallel DisplayName="Paralelo" sap:VirtualizedContainerService.HintSize="1216,158" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Volcado a base de datos.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="temporal_inv">[temporal_main]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Volcado a excel histórica.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="nueva_inv">[nueva_main]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Envio_Correo_Electronico_HTML.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="excelEntrada">[excelEntrada_main]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="directorioEntrada">[directorioEntrada_main]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="directorioPDF">[directorioPDF_main]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="nombre">[nombre_main]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Parallel>
+  </Sequence>
+</Activity>
